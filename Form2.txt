@@ -1,0 +1,94 @@
+Private Sub Command1_Click()
+
+Set con = New ADODB.Connection
+Set rs = New ADODB.Recordset
+con.Open ("Provider=MSDAORA.1;Password=raj;User ID=system;Persist Security Info=True")
+rs.Open "insert into food values ('" & Text4.Text & "','" & Text1.Text & "','" & Text2.Text & "','" & Text3.Text & "' ) ", con, adOpenDynamic, adLockOptimistic
+
+MsgBox "Inserted"
+
+End Sub
+
+
+Private Sub Command2_Click()
+
+Set con = New ADODB.Connection
+Set rs = New ADODB.Recordset
+con.Open ("Provider=MSDAORA.1;Password=raj;User ID=system;Persist Security Info=True")
+
+Text1.Text = ""
+Text2.Text = ""
+Text3.Text = ""
+Text4.Text = ""
+
+Label6.Caption = Format("")
+MsgBox "Fill In Your Details"
+
+End Sub
+
+
+Private Sub Command3_Click()
+
+If Text2.Text = "dosa" Then
+amt = 30
+
+ElseIf Text2.Text = "poori" Then
+amt = 40
+
+ElseIf Text2.Text = "pongal" Then
+amt = 30
+
+ElseIf Text2.Text = "maggi" Then
+amt = 25
+
+ElseIf Text2.Text = "tea" Then
+amt = 10
+
+ElseIf Text2.Text = "coffee" Then
+amt = 15
+
+ElseIf Text2.Text = "boost" Then
+amt = 20
+
+ElseIf Text2.Text = "idly" Then
+amt = 20
+
+ElseIf Text2.Text = "vadai" Then
+amt = 10
+
+ElseIf Text2.Text = "chapathi" Then
+amt = 20
+
+Else
+amt = 30
+
+End If
+
+Label6.Caption = Format(amt, "#")
+
+End Sub
+
+
+Private Sub Command4_Click()
+
+MsgBox "Thank You, Visit Again!!"
+Form1.Show
+Unload Me
+
+End Sub
+
+
+Private Sub Form_Load()
+
+Set con = New ADODB.Connection
+Set rs = New ADODB.Recordset
+con.Open ("Provider=MSDAORA.1;Password=raj;User ID=system;Persist Security Info=True")
+rs.Open "select*from food", con, adOpenDynamic, adLockOptimistic
+
+Text1.Text = ""
+Text2.Text = ""
+Text3.Text = ""
+Text4.Text = ""
+Label6.Caption = Format("")
+
+End Sub

@@ -1,0 +1,44 @@
+Private Sub Command1_Click()
+
+Set con = New ADODB.Connection
+Set rs = New ADODB.Recordset
+con.Open ("Provider=MSDAORA.1;Password=raj;User ID=system;Persist Security Info=True")
+
+If Text1.Text = "Hello" And Text2.Text = "ssn@123" Then
+MsgBox "Login Successful"
+Form2.Show
+Unload Me
+
+Else
+Text1.Text = ""
+Text2.Text = ""
+MsgBox "Enter correct details"
+
+End If
+
+End Sub
+
+
+Private Sub Command2_Click()
+
+Set con = New ADODB.Connection
+Set rs = New ADODB.Recordset
+con.Open ("Provider=MSDAORA.1;Password=raj;User ID=system;Persist Security Info=True")
+
+Text1.Text = ""
+Text2.Text = ""
+MsgBox "Fill In Your Details!"
+
+End Sub
+
+
+Private Sub Form_Load()
+
+Set con = New ADODB.Connection
+Set rs = New ADODB.Recordset
+con.Open ("Provider=MSDAORA.1;Password=raj;User ID=system;Persist Security Info=True")
+
+Text1.Text = ""
+Text2.Text = ""
+
+End Sub
