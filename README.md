@@ -1,2 +1,3 @@
 # Hotel-Management-System
-Done with SQL And Visual Basic
+
+Download the HOTELMANAGEMENTSYSTEM.docx to View the Images of Form!
